@@ -1,0 +1,157 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/material.indigo-pink.min.css">
+	<script defer src="js/material.min.js"></script>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+	<link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<style>
+		.mdl-layout__drawer-button{
+			padding-top:2.5vh;
+		}
+		.link-menu{
+			padding-left:5vw;
+			padding-top:5vw;
+		}
+		.link-menu a{
+			text-decoration:none;
+			color: grey;
+			text-transform:uppercase;
+		}
+	</style>
+</head>
+<body>
+	<!-- Simple header with fixed tabs. -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+				mdl-layout--fixed-tabs">
+	  <header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+		  <!-- Title -->
+		  <span class="mdl-layout-title">Kantin</span>
+		</div>
+		<!-- Tabs -->
+		<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+		  <a href="index.html" class="mdl-layout__tab is-active">Peta</a>
+		  <a href="index.html" class="mdl-layout__tab">Asset</a>
+		  <a href="index.html" class="mdl-layout__tab">Pesan</a>
+		</div>
+	  </header>
+	  <div class="mdl-layout__drawer">
+		<!--<span class="mdl-layout-title">Menu</span>-->
+		<style>
+			.demo-card-wide.mdl-card {
+			  width: 240px;
+			}
+			.demo-card-wide > .mdl-card__title_main {
+				webkit-align-items:center;
+				-ms-flex-align:center;
+				align-items:center;
+				color:white;
+				display:block;
+				display:-webkit-flex;
+				display:-ms-flexbox;
+				display:flex;
+				-webkit-justify-content:stretch;
+				-ms-flex-pack:stretch;
+				justify-content:stretch;
+				line-height:normal;
+				padding:16px;
+				-webkit-perspective-origin:165px 56px;
+				perspective-origin:165px 56px;
+				-webkit-transform-origin:165px 56px;
+				transform-origin:165px 56px;
+				box-sizing:border-box;
+				min-height:20vh;
+			}
+			.demo-card-wide > .md-bg {
+			  background: url('img/bg.jpg') center / cover;
+			}
+			.demo-card-wide > .mdl-card__menu {
+			  color: #fff;
+			}
+			</style>
+
+			<div class="demo-card-wide mdl-card mdl-shadow--2dp height-drawer" style="min-height:20vh!important;">
+			  <div class="mdl-card__title_main md-bg">
+				<h2 class="mdl-card__title-text">Menu</h2>
+			  </div>
+			</div>
+			<div class="link-menu">
+				<a href="add-asset.html">Tambah Asset</a>
+			</div>
+			<div class="link-menu">
+				<a href="tambahadmin.html">Bantuan</a>
+			</div>
+			<div class="link-menu">
+				<a href="tambahadmin.html">Keluar</a>
+			</div>
+	  </div>	
+	  <main class="mdl-layout__content">
+		<section class="mdl-layout__tab-panel is-active" id="fixed-tab-4">
+		  <div class="page-content">
+			<style>
+			.demo-card-wide.mdl-card {
+			  width: 512px;
+			}
+			.demo-card-wide > .mdl-card__title {
+			  color: #fff;
+			  height: 176px;
+			}
+			.demo-card-wide > .mdmain-bg {
+			  background: url('img/kantin.jpeg') center / cover;
+			}
+			.demo-card-wide > .mdl-card__menu {
+			  color: #fff;
+			}
+			.red-bg{
+				background-color:#F44336 !important;
+				padding:3px;
+			}
+			</style>
+
+			<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+			  <div class="mdl-card__title mdmain-bg">
+				<h2 class="mdl-card__title-text red-bg">SMA Warga</h2>
+			  </div>
+			</div>
+			<div style="margin-left:20px;margin-right:20px;">
+				  <h6 style="margin:0px;">Nama Penyewa</h6>
+				  <p>Maulana Ichwan Anshory</p>
+				  <h6 style="margin:0px;">Alamat</h6>
+				  <p>Gendol, RT 26, Dukuh, Tangen</p>
+				  <h6 style="margin:0px;">Kontak</h6>
+				  <p>08123456789</p>
+				  <h6 style="margin:0px;">Status Pembayaran</h6>
+				  <style>
+					.bgred{
+						background-color:red!important;
+					}
+					.ggreen{
+						background-color:green!important;
+					}
+				  </style>
+				  <span id="status"class="new badge bgred" style="float:left;margin-left:0;margin-top:5px;font-size:1em;" data-badge-caption="">Belum membayar</span>
+		<div style="text-align:right;margin-top:5vh;">
+		<button onclick="change()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+			Ubah status
+		</button>
+		<script>
+			function change()
+			{
+				document.getElementById("status").innerHTML="Sudah membayar";
+				document.getElementById("status").className="new badge bggreen";				
+			}
+		</script>
+		</div>
+			  </div>
+		  </div>
+		</section>
+	  </main>
+</div>
+</body>
+</html>
